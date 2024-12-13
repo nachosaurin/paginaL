@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-image: url('./images/mono.png');
+    background-size: cover;
+    background-position: center;
+}
+
+body.success {
+    background-image: url('./images/perro.png');
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+body.failure {
+    background-image: url('./images/stop.png');
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#yes {
+    background-color: #28a745;
+    color: white;
+}
+
+button#yes:hover {
+    background-color: #218838;
+}
+
+button#no {
+    background-color: #dc3545;
+    color: white;
+}
+
+button#no:hover {
+    background-color: #c82333;
+}

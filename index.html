@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Queres ser mi novia?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>¿Queres ser mi novia?</h1>
+        <div class="buttons">
+            <button id="yes">Sí</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+    <script>
+        const body = document.body;
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+
+        yesButton.addEventListener('click', () => {
+            body.className = 'success';
+            body.style.backgroundSize = 'contain'; // Achica la imagen pero sigue cubriendo los bordes
+            body.style.backgroundRepeat = 'no-repeat';
+            document.querySelector('.content').innerHTML = `
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1></h1>
+                </div>
+            `;
+            setTimeout(() => location.reload(),3000);
+        });
+
+        noButton.addEventListener('click', () => {
+            body.className = 'failure';
+            document.querySelector('.content').innerHTML = `
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>No entendiste</h1>
+                </div>
+            `;
+            setTimeout(() => location.reload(), 1900);
+        });
+    </script>
+</body>
+</html>
